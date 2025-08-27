@@ -2,30 +2,30 @@ using Shouldly;
 
 namespace Solutions.Test;
 
-public class Problem2Test
+public class Problem21Test
 {
     [Theory]
     [InlineData(
-        new int[] { 2, 4, 3 },
-        new int[] { 5, 6, 4 },
-        new int[] { 7, 0, 8 })]
+        new int[] { 1, 2, 4 },
+        new int[] { 1, 3, 4 },
+        new int[] { 1, 1, 2, 3, 4, 4 })]
     [InlineData(
-        new int[] { 0 },
+        new int[] { },
+        new int[] { },
+        new int[] { })]
+    [InlineData(
+        new int[] { },
         new int[] { 0 },
         new int[] { 0 })]
-    [InlineData(
-        new int[] { 9, 9, 9, 9, 9, 9, 9 },
-        new int[] { 9, 9, 9, 9 },
-        new int[] { 8, 9, 9, 9, 0, 0, 0, 1 })]
     public void TestCases(int[] nums1, int[] nums2, int[] expected)
     {
         var l1 = Utils.ArrayToList(nums1);
         var l2 = Utils.ArrayToList(nums2);
         var ex = Utils.ArrayToList(expected);
 
-        var p = new Problem2();
+        var p = new Problem21();
 
-        var result = p.AddTwoNumbers(l1, l2);
+        var result = p.MergeTwoLists(l1, l2);
 
         result.ShouldBeEquivalentTo(ex);
     }
